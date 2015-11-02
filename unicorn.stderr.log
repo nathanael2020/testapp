@@ -78,3 +78,176 @@ I, [2015-11-01T18:57:04.210401 #24891]  INFO -- : listening on addr=/tmp/testapp
 I, [2015-11-01T18:57:04.314966 #24891]  INFO -- : master process ready
 I, [2015-11-01T18:57:04.358112 #24896]  INFO -- : worker=0 ready
 I, [2015-11-01T18:57:04.387169 #24899]  INFO -- : worker=1 ready
+I, [2015-11-01T18:59:34.395668 #25017]  INFO -- : Refreshing Gem list
+I, [2015-11-01T18:59:37.029766 #25017]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T18:59:37.030071 #25017]  INFO -- : listening on addr=/tmp/testapp.socket fd=11
+I, [2015-11-01T18:59:37.129161 #25017]  INFO -- : master process ready
+I, [2015-11-01T18:59:37.170333 #25021]  INFO -- : worker=0 ready
+I, [2015-11-01T18:59:37.204204 #25024]  INFO -- : worker=1 ready
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:195:in `pid=': Already running on PID:25017 (or pid=/tmp/unicorn.testapp.pid is stale) (ArgumentError)
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:127:in `start'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/bin/unicorn_rails:209:in `<top (required)>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `load'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `<main>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `eval'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-01T19:11:07.821895 #13063]  INFO -- : Refreshing Gem list
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:238:in `add_request_method': You should not use the `match` method in your router without specifying an HTTP method. (ArgumentError)
+If you want to expose your action to both GET and POST, add `via: [:get, :post]` option.
+If you want to expose your action to GET, use `get` in the router:
+  Instead of: match "controller#action"
+  Do: get "controller#action"
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:124:in `initialize'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:78:in `new'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:78:in `build'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:1559:in `add_route'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:1536:in `decomposed_match'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:1517:in `block in match'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:1507:in `each'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/mapper.rb:1507:in `match'
+	from /home/apps/testapp/config/routes.rb:6:in `block in <top (required)>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:434:in `instance_exec'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:434:in `eval_block'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/actionpack-4.2.4/lib/action_dispatch/routing/route_set.rb:412:in `draw'
+	from /home/apps/testapp/config/routes.rb:1:in `<top (required)>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activesupport-4.2.4/lib/active_support/dependencies.rb:268:in `load'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activesupport-4.2.4/lib/active_support/dependencies.rb:268:in `block in load'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activesupport-4.2.4/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activesupport-4.2.4/lib/active_support/dependencies.rb:268:in `load'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activesupport-4.2.4/lib/active_support/file_update_checker.rb:75:in `call'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activesupport-4.2.4/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:27:in `updater'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/initializable.rb:30:in `run'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:226:in `block in tsort_each'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:348:in `block (2 levels) in each_strongly_connected_component'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:429:in `each_strongly_connected_component_from'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:347:in `block in each_strongly_connected_component'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:345:in `each'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:345:in `call'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:345:in `each_strongly_connected_component'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:224:in `tsort_each'
+	from /home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/tsort.rb:203:in `tsort_each'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/railties-4.2.4/lib/rails/application.rb:352:in `initialize!'
+	from /home/apps/testapp/config/environment.rb:8:in `<top (required)>'
+	from config.ru:4:in `require'
+	from config.ru:4:in `block in <main>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+	from config.ru:1:in `new'
+	from config.ru:1:in `<main>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn.rb:46:in `eval'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn.rb:46:in `block in builder'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/bin/unicorn_rails:139:in `call'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/bin/unicorn_rails:139:in `block in rails_builder'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:752:in `call'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:752:in `build_app!'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:129:in `start'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/bin/unicorn_rails:209:in `<top (required)>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `load'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `<main>'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `eval'
+	from /home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-01T19:12:10.481316 #13184]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:12:13.298473 #13184]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:12:13.298805 #13184]  INFO -- : listening on addr=/tmp/testapp.socket fd=11
+I, [2015-11-01T19:12:13.692797 #13184]  INFO -- : master process ready
+I, [2015-11-01T19:12:13.732456 #13189]  INFO -- : worker=0 ready
+I, [2015-11-01T19:12:13.764458 #13192]  INFO -- : worker=1 ready
+I, [2015-11-01T19:13:13.309265 #13252]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:13:15.989472 #13252]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:13:15.989759 #13252]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:13:16.085036 #13252]  INFO -- : master process ready
+I, [2015-11-01T19:13:16.130505 #13256]  INFO -- : worker=0 ready
+I, [2015-11-01T19:13:16.154007 #13259]  INFO -- : worker=1 ready
+I, [2015-11-01T19:14:33.381597 #13252]  INFO -- : reaped #<Process::Status: pid 13256 exit 0> worker=0
+I, [2015-11-01T19:14:33.381806 #13252]  INFO -- : reaped #<Process::Status: pid 13259 exit 0> worker=1
+I, [2015-11-01T19:14:33.382974 #13252]  INFO -- : master complete
+I, [2015-11-01T19:14:36.948258 #13306]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:14:39.556920 #13306]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:14:39.557160 #13306]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:14:39.657972 #13306]  INFO -- : master process ready
+I, [2015-11-01T19:14:39.805102 #13310]  INFO -- : worker=0 ready
+I, [2015-11-01T19:14:39.825023 #13313]  INFO -- : worker=1 ready
+I, [2015-11-01T19:16:19.936547 #13306]  INFO -- : reaped #<Process::Status: pid 13310 exit 0> worker=0
+I, [2015-11-01T19:16:19.936792 #13306]  INFO -- : reaped #<Process::Status: pid 13313 exit 0> worker=1
+I, [2015-11-01T19:16:19.937749 #13306]  INFO -- : master complete
+I, [2015-11-01T19:16:23.714714 #13692]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:16:26.367583 #13692]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:16:26.367811 #13692]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:16:26.470584 #13692]  INFO -- : master process ready
+I, [2015-11-01T19:16:26.509914 #13697]  INFO -- : worker=0 ready
+I, [2015-11-01T19:16:26.546083 #13700]  INFO -- : worker=1 ready
+I, [2015-11-01T19:16:47.005766 #13692]  INFO -- : reaped #<Process::Status: pid 13697 exit 0> worker=0
+I, [2015-11-01T19:16:47.005992 #13692]  INFO -- : reaped #<Process::Status: pid 13700 exit 0> worker=1
+I, [2015-11-01T19:16:47.007775 #13692]  INFO -- : master complete
+I, [2015-11-01T19:16:50.401152 #13709]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:16:52.982837 #13709]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:16:52.983074 #13709]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:16:53.083125 #13709]  INFO -- : master process ready
+I, [2015-11-01T19:16:53.127142 #13713]  INFO -- : worker=0 ready
+I, [2015-11-01T19:16:53.153256 #13716]  INFO -- : worker=1 ready
+I, [2015-11-01T19:18:23.278265 #13709]  INFO -- : reaped #<Process::Status: pid 13713 exit 0> worker=0
+I, [2015-11-01T19:18:23.278429 #13709]  INFO -- : reaped #<Process::Status: pid 13716 exit 0> worker=1
+I, [2015-11-01T19:18:23.279850 #13709]  INFO -- : master complete
+I, [2015-11-01T19:18:37.144650 #13839]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:18:39.759603 #13839]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:18:39.759839 #13839]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:18:39.862794 #13839]  INFO -- : master process ready
+I, [2015-11-01T19:18:39.892912 #13843]  INFO -- : worker=0 ready
+I, [2015-11-01T19:18:39.922692 #13846]  INFO -- : worker=1 ready
+I, [2015-11-01T19:25:32.751061 #13839]  INFO -- : reaped #<Process::Status: pid 13843 exit 0> worker=0
+I, [2015-11-01T19:25:32.751239 #13839]  INFO -- : reaped #<Process::Status: pid 13846 exit 0> worker=1
+I, [2015-11-01T19:25:32.752174 #13839]  INFO -- : master complete
+I, [2015-11-01T19:25:36.598601 #14326]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:25:39.336733 #14326]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:25:39.337022 #14326]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:25:39.439869 #14326]  INFO -- : master process ready
+I, [2015-11-01T19:25:39.465889 #14330]  INFO -- : worker=0 ready
+I, [2015-11-01T19:25:39.502638 #14333]  INFO -- : worker=1 ready
+I, [2015-11-01T19:27:13.282298 #14326]  INFO -- : reaped #<Process::Status: pid 14330 exit 0> worker=0
+I, [2015-11-01T19:27:13.282520 #14326]  INFO -- : reaped #<Process::Status: pid 14333 exit 0> worker=1
+I, [2015-11-01T19:27:13.283658 #14326]  INFO -- : master complete
+I, [2015-11-01T19:27:16.162439 #14429]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:27:18.793962 #14429]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:27:18.794271 #14429]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:27:18.894355 #14429]  INFO -- : master process ready
+I, [2015-11-01T19:27:18.932410 #14434]  INFO -- : worker=0 ready
+I, [2015-11-01T19:27:18.956291 #14437]  INFO -- : worker=1 ready
+I, [2015-11-01T19:30:07.186916 #14429]  INFO -- : reaped #<Process::Status: pid 14434 exit 0> worker=0
+I, [2015-11-01T19:30:07.187146 #14429]  INFO -- : reaped #<Process::Status: pid 14437 exit 0> worker=1
+I, [2015-11-01T19:30:07.188426 #14429]  INFO -- : master complete
+I, [2015-11-01T19:30:10.084908 #14572]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:30:12.796058 #14572]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:30:12.796290 #14572]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:30:12.894196 #14572]  INFO -- : master process ready
+I, [2015-11-01T19:30:12.922573 #14577]  INFO -- : worker=0 ready
+I, [2015-11-01T19:30:12.956835 #14580]  INFO -- : worker=1 ready
+I, [2015-11-01T19:36:45.339149 #14572]  INFO -- : reaped #<Process::Status: pid 14577 exit 0> worker=0
+I, [2015-11-01T19:36:45.339295 #14572]  INFO -- : reaped #<Process::Status: pid 14580 exit 0> worker=1
+I, [2015-11-01T19:36:45.340050 #14572]  INFO -- : master complete
+I, [2015-11-01T19:36:48.573006 #15175]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:36:51.276510 #15175]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:36:51.276797 #15175]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:36:51.397226 #15175]  INFO -- : master process ready
+I, [2015-11-01T19:36:51.398278 #15175]  INFO -- : reaped #<Process::Status: pid 15180 exit 0> worker=0
+I, [2015-11-01T19:36:51.498916 #15175]  INFO -- : reaped #<Process::Status: pid 15184 exit 0> worker=1
+I, [2015-11-01T19:36:51.499912 #15175]  INFO -- : master complete
+I, [2015-11-01T19:36:54.927798 #15187]  INFO -- : Refreshing Gem list
+I, [2015-11-01T19:36:57.671993 #15187]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T19:36:57.672277 #15187]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T19:36:57.769606 #15187]  INFO -- : master process ready
+I, [2015-11-01T19:36:57.799422 #15192]  INFO -- : worker=0 ready
+I, [2015-11-01T19:36:57.829925 #15195]  INFO -- : worker=1 ready
+I, [2015-11-01T19:42:12.597937 #15187]  INFO -- : reaped #<Process::Status: pid 15192 exit 0> worker=0
+I, [2015-11-01T19:42:12.598133 #15187]  INFO -- : reaped #<Process::Status: pid 15195 exit 0> worker=1
+I, [2015-11-01T19:42:12.599314 #15187]  INFO -- : master complete

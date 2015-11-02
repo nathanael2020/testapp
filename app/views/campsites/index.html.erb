@@ -1,0 +1,314 @@
+
+<style>
+
+.dataTables_length {
+	
+	font-size: 11pt;
+	color: black;
+	
+}
+
+.dataTables_filter {
+	
+	font-size: 11pt;
+	color: black;
+	
+}
+
+</style>
+
+<% controller.title = 'Campsites Finder' %>
+
+<!--
+<script src="/assets/jquery.SimpleWeather.js"></script>
+-->
+
+
+  <script type="text/javascript">
+
+	 $(document).ready(function() {
+
+			var oTable =  $('#campsites_table').DataTable(
+			
+		{ 			 "iDisplayLength": -1,
+		"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+
+			"data": [ [ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=582">Andrew Molera</a>', 'FCFS (Year Round)', 'Central Coast', 144, 25, 'Picnic Table, Lockers, Potable Water, Flush Toilet, Fire Rings, Potable Water', 'CA Parks', '<div style="display:inline" id="weather_1"></div>' ] ] /*,
+[ '<a target="_blank" href="http://www.stewardsofthecoastandredwoods.org/austincreekcamping.htm">Austin Creek SRA</a><br><a target="_blank" href="https://maps.google.com/maps?q=austin+creek+state+recreation+area">(map)</a>', 'FCFS (Some sites require a permit, apply on-site during the day).', 'North Coast', 77, 25, 'Picnic Tables, Pit Toilets, Water Requires Treatment, FIRE BAN (Stoves Okay). Primitive Camping.', 'CA Parks', '<div style="display:inline" id="weather_2"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=426">Benbow Lake SRA</a>', 'Closed Due to Budget', 'North Coast', 202, 35, '', 'CA Parks', '<div style="display:inline" id="weather_3"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=540">Big Basin Redwoods State Park</a><br><a target="_blank" href="https://maps.google.com/maps?q=big+basin+redwoods+state+park">(map)</a>', 'Reservable (Reduced Availability Off-Season)', 'Bay Area', 65, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_4"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/indianvalley.html">Blue Oak Campground, Indian Valley Reservoir</a><br><a target="_blank" href="https://maps.google.com/maps?q=indian+valley+dam">(map)</a>', 'FCFS (Year Round)', 'North Coast', 135, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_5"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=477">Bothe-Napa Valley SP</a><br><a target="_blank" href="https://maps.google.com/maps?q=bothe+napa+valley+state+park">(map)</a>', 'Reservable (Year Round)', 'Wine Country', 70, 35, 'Picnic Tables, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_6"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=487">Brannan Island SRA</a><br><a target="_blank" href="https://maps.google.com/maps?q=Brannan+Island+SRA">(map)</a>', 'Reservable (Year Round)', 'Bay Area', 58, 25, 'Picnic Tables, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_7"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/cowmtn.html">Buckhorn</a><br><a target="_blank" href="https://maps.google.com/maps?q=cow+mountain+ca+ukiah">(map)</a>', 'FCFS (Year Round)', 'North Coast', 133, 0, 'Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_8"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=536">Butano SP</a><br><a target="_blank" href="https://maps.google.com/maps?q=butano+state+park">(map)</a>', 'Reservable Until 10/31 (FCFS 11/1 to 11/30)', 'Bay Area', 52, 35, 'Picnic Tables, Food Lockers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_9"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=551">Calaveras Big Trees SP</a><br><a target="_blank" href="https://maps.google.com/maps?q=calaveras+big+trees">(map)</a>', 'Reservable Until 9/30 (FCFS After)', 'High Sierra', 156, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings. Dry camping only December 1st to February 28th.', 'CA Parks', '<div style="display:inline" id="weather_10"></div> ' ],
+[ '<a target="_blank" href="http://ohv.parks.ca.gov/?page_id=1172">Carnegie SVRA</a><br><a target="_blank" href="https://maps.google.com/maps?q=carnegie+svra">(map)</a>', 'FCFS (Year Round)', 'Bay Area', 69, 10, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_11"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=454">Castle Crags SP</a>', 'FCFS After 9/7', 'Shasta Cascade', 262, 15, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_12"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=557">Caswell Memorial SP</a>', 'Reservable (Year Round)', 'Central Valley', 83, 30, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_13"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/redding/recreationmain/reddingrecreationohvmain.html">Chappie-Shasta Off-Highway Vehicle Area</a>', 'FCFS (Year Round)', 'Shasta Cascade', 228, 10, 'Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_14"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=466">China Camp SP</a>', 'Reservable (Year Round)', 'Bay Area', 25, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_15"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=473">CLEAR LAKE SP, CA</a>', 'Reservable (Year Round)', 'North Coast', 124, 30, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_16"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=461">Colusa-Sacramento River SRA</a>', 'Reservable (Year Round)', 'Central Valley', 124, 25, 'Picnic Tables, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_17"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/hollister/recreation/condon_peak.html">Condon Peak</a>', 'FCFS (Year Round)', 'Central Coast', 173, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_18"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=505">D. L. Bliss SP</a>', 'FCFS (Park Closes 9/30)', 'Lake Tahoe', 197, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_19"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=414">Del Norte Coast Redwoods SP</a>', 'Closed for Season (Opens May 2014)', 'North Coast', 346, 35, '', 'CA Parks', '<div style="display:inline" id="weather_20"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/eaglelake/dodge.html">Dodge</a>', 'FCFS (Year Round)', 'Shasta Cascade', 360, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water. DONATION REQUESTED.', 'BLM', '<div style="display:inline" id="weather_21"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=503">Donner Memorial SP</a>', 'Reservable, Some FCFS (Park Closes 9/30)', 'Lake Tahoe', 185, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_22"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/redding/recreationmain/reddingrecreationtrinity.html">Douglas City Campground</a>', 'FCFS (Mid-May to October)', 'Shasta Cascade', 256, 10, 'Flush and Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_23"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=506">Emerald Bay SP</a>', 'Closed for 2013', 'Lake Tahoe', 200, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_24"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/surprise/campinfo.html">Fee Reservoir</a>', 'FCFS (Year Round, Weather Permitting)', 'Shasta Cascade', 413, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_25"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=500">Folsom Lake SRA</a>', 'Reservable (some FCFS until 10/1)', 'Gold Country', 120, 33, 'Picnic Tables, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_26"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/redding/recreationmain/reddingrecreationbutte.html">Forks of Butte Creek Primitive Campground</a>', 'FCFS (Mid-May Until Bad Winter Weather)', 'Shasta Cascade', 275, 0, 'No Toilet, Fire Ring, No Table, Water Requires Treatment', 'BLM', '<div style="display:inline" id="weather_27"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=449">Fort Ross SHP</a>', 'Camping Closed Due to Budget', 'North Coast', 90, 25, '', 'CA Parks', '<div style="display:inline" id="weather_28"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=564">Fremont Peak</a>', 'FCFS and Reservations (see website)', 'Central Coast', 100, 25, 'Picnic Table, Pit/Vault Toilet, Fire Rings, Potable Water', 'CA Parks', '<div style="display:inline" id="weather_29"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/cowmtn.html">Goat Rock</a>', 'FCFS (Year Round)', 'North Coast', 133, 0, 'Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_30"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=421">Grizzly Creek Redwoods SP</a>', 'FCFS (Year Round)', 'North Coast', 270, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_31"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=508">Grover Hot Spring SP</a>', 'FCFS until Mid-October', 'High Sierra', 210, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_32"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=531">Half Moon Bay SB</a>', 'Reservable (Year Round)', 'Bay Area', 30, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_33"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=590">Hearst San Simeon SP</a>', 'Reservable (Year Round)', 'Central Coast', 235, 20, 'Picnic Table, Flush Toilet, Fire Ring, Showers, Potable Water', 'CA Parks', '<div style="display:inline" id="weather_34"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=438">Hendy Woods SP</a>', 'Reservable Until 9/30 (FCFS After)', 'Wine Country', 125, 40, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_35"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=561">Henry Coe SP</a>', 'Reservable (Year Round)', 'Bay Area', 80, 20, 'Table, Flush Toilet, Stoves Allowed, No Fires, Water Requires Treatment', 'CA Parks', '<div style="display:inline" id="weather_36"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=546">Henry Cowell Redwoods SP</a>', 'Reservable Until 10/31 (Closed After)', 'Bay Area', 75, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_37"></div> ' ],
+[ '<a target="_blank" href="http://ohv.parks.ca.gov/?page_id=1179">Hollister Hills SVRA</a>', 'FCFS (Year Round)', 'Central Valley', 100, 10, 'Picnic Tables, Restrooms, Showers, Fire Rings, No Water', 'CA Parks', '<div style="display:inline" id="weather_38"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Honeydew Creek</a>', 'FCFS (Year Round)', 'North Coast', 250, 8, 'Vault Toilet, Fire Ring, Picnic Table, Water Needs Treating', 'BLM', '<div style="display:inline" id="weather_39"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Horse Mountain</a>', 'FCFS (Year Round)', 'North Coast', 230, 5, 'Pit Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_40"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=425">Humboldt Redwoods SP</a>', 'Reservable and FCFS (See Website)', 'North Coast', 230, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_41"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=553">Indian Grinding Rock SHP</a>', 'FCFS (Closes 10/1)', 'Gold Country', 140, 30, 'Picnic Tables, Food Lockers, Restrooms, Showers, No Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_42"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=413">Jedediah Smith Redwoods SP</a>', 'FCFS After 9/1', 'North Coast', 360, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_43"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/redding/recreationmain/reddingrecreationtrinity.html">Junction City Campground</a>', 'FCFS (Mid-May to November)', 'Shasta Cascade', 256, 10, 'Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_44"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/indianvalley.html">Kowalski</a>', 'FCFS (Year Round)', 'North Coast', 135, 0, 'No Toilet, No Water', 'BLM', '<div style="display:inline" id="weather_45"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Lacks Creek</a>', 'FCFS (Year Round)', 'North Coast', 315, 0, 'Vault Toilet, Fire Ring, Picnic Table, Water Needs Treating', 'BLM', '<div style="display:inline" id="weather_46"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/hollister/recreation/Laguna.html">Laguna Mountain</a>', 'FCFS (Year Round)', 'Central Coast', 165, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_47"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=462">Lake Oroville SRA</a>', 'FCFS After 10/5', 'Shasta Cascade', 175, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, NON Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_48"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=577">Limekiln SP</a>', 'Reservable (Year Round)', 'Central Coast', 175, 35, 'Picnic Tables, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_49"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/knoxville.html">Lower Hunting Creek</a>', 'FCFS (Year Round)', 'North Coast', 113, 0, 'Vault Toilet, No Water', 'BLM', '<div style="display:inline" id="weather_50"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=436">MacKerricher SP</a>', 'FCFS After 9/1', 'North Coast', 175, 25, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_51"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=494">Malakoff Diggins SHP</a>', 'Reservable (Closes 9/29)', 'Gold Country', 175, 35, 'Picnic Tables, Food Lockers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_52"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=437">Manchester SP</a>', 'FCFS (Year Round)', 'North Coast', 150, 25, 'Picnic Tables, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_53"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=545">Manresa SB</a>', 'Reservable Until 10/31 (Closed After)', 'Bay Area', 85, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_54"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Mattole</a>', 'FCFS (Year Round)', 'North Coast', 265, 8, 'Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_55"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/cowmtn.html">Mayacmas</a>', 'FCFS (Year Round)', 'North Coast', 133, 0, 'Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_56"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=455">McArthur-Burney Falls Memorial SP</a>', 'FCFS After 9/7', 'Shasta Cascade', 280, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_57"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=554">McConnell SRA</a>', 'Reservable (Year Round)', 'Central Valley', 115, 30, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_58"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/folsom/mercedriverrec.html">Merced River</a>', 'FCFS (Year Round)', 'Sierra Mountains', 167, 10, 'Pit Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_59"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=587">Millerton Lake SRA</a>', 'Reservable (Year Round)', 'Central Valley', 200, 30, 'Picnic Tables, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_60"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=517">Mount Diablo SP</a>', 'Reservable (Year Round)', 'Bay Area', 45, 30, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_61"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=471">Mount Tamalpais SP</a>', 'Reservable (Year Round)', 'Bay Area', 20, 25, 'Picnic Tables, Food Lockers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_62"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Nadelos</a>', 'FCFS (Year Round)', 'North Coast', 230, 8, 'Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_63"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=435">Navarro River Redwoods State Park</a>', 'Closed', 'Wine Country', 140, 25, '', 'CA Parks', '<div style="display:inline" id="weather_64"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=542">New Brighton State Beach</a>', 'Reservable from 2/1 to 12/31', 'Bay Area', 75, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_65"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/eaglelake/eaglelakecamping.html">North Eagle Lake</a>', 'FCFS (May to November)', 'Shasta Cascade', 312 , 8, 'Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_66"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=417">Patricks Point SP</a>', 'Closes 9/1', 'North Coast', 300, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_67"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=570">PFEIFFER BIG SUR SP, CA</a>', 'Reservable (Year Round)', 'Central Coast', 150, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_68"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/alturas/pit_river.html">Pit River</a>', 'FCFS (May to November)', 'Shasta Cascade', 270, 8, 'Pit Toilet, Fire Ring, Picnic Table, Water Needs Treating', 'BLM', '<div style="display:inline" id="weather_69"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=507">Plumas-Eureka SP</a>', 'FCFS Until 9/29 (Closed After)', 'Shasta Cascade', 240, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_70"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=539">Portola Redwoods SP</a>', 'Reservable from 2/1 to 12/31', 'Bay Area', 50, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_71"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=415">Prairie Creek Redwoods SP</a>', 'FCFS After 9/1', 'North Coast', 325, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_72"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/eaglelake/ramhornspring.html">Ramhorn Springs</a>', 'FCFS (Year Round)', 'Shasta Cascade', 330, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water. DONATION REQUESTED.', 'BLM', '<div style="display:inline" id="weather_73"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/cowmtn.html">Red Mountain</a>', 'FCFS (Year Round)', 'North Coast', 133, 0, 'Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_74"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=422">Richardson Grove SP</a>', 'FCFS After 9/5', 'North Coast', 200, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_75"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/eaglelake/eaglelakecamping.html">Rocky Point - East and West</a>', 'FCFS (Year Round)', 'Shasta Cascade', 312, 0, 'Vault Toilet, No Water, No Fire Rings, No Tables. DONATION REQUESTED.', 'BLM', '<div style="display:inline" id="weather_76"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=432">Russian Gulch SP</a>', 'FCFS Until 9/30 (Closed After)', 'North Coast', 160, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_77"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=453">Salt Point SP</a>', 'Closes 9/1', 'North Coast', 100, 25, '', 'CA Parks', '<div style="display:inline" id="weather_78"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=469">Samuel P. Taylor SP</a>', 'Reservable Until 11/2 (FCFS After)', 'Bay Area', 31, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_79"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=558">San Luis Reservoir SRA</a>', 'Reservable (Year Round)', 'Central Valley', 120, 20, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_80"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/ukiah/cowmtn.html">Sheldon Creek</a>', 'FCFS (Year Round)', 'North Coast', 110, 0, 'Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_81"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=429">Sinkyone Wilderness SP</a>', 'FCFS (Year Round)', 'North Coast', 230, 25, 'Picnic Tables, Pit Toilets, Fire Rings, No Water.', 'CA Parks', '<div style="display:inline" id="weather_82"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=451">Sonoma Coast State Park</a>', 'Reservable and FCFS (See Website)', 'North Coast', 78, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_83"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/folsom/yubacampground.html">South Yuba</a>', 'FCFS (April to October 15th)', 'Gold Country', 150, 5, 'Pit Toilet, Fire Ring, Picnic Table, Piped Water (May Need Treatment)', 'BLM', '<div style="display:inline" id="weather_84"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=423">Standish-Hickey State Recreation Area</a>', 'Reservable (Year Round)', 'North Coast', 185, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_85"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/redding/recreationmain/reddingrecreationtrinity.html">Steel Bridge Campground</a>', 'FCFS (Mid-May Until Bad Winter Weather)', 'Shasta Cascade', 256, 5, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_86"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/redding/recreationmain/reddingrecreationtrinity.html">Steiner Flats Primitive Campground</a>', 'FCFS (Year Round)', 'Shasta Cascade', 256, 0, 'Vault Toilet, No Water', 'BLM', '<div style="display:inline" id="weather_87"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=510">Sugar Pine Point SP</a>', 'FCFS Beginning 9/1', 'Lake Tahoe', 210, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_88"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=481">Sugarloaf Ridge SP</a>', 'Reservable (Year Round)', 'North Coast (Wine Country?)', 60, 35, 'Picnic Tables, Food Lockers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_89"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=544">Sunset SB</a>', 'Reservable Until 10/31 (Closed After)', 'Bay Area', 88, 35, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_90"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=504">Tahoe SRA</a>', 'Closed for Season', 'Lake Tahoe', 200, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_91"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Tolkan</a>', 'FCFS (Year Round)', 'North Coast', 230, 8, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_92"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=555">Turlock Lake SRA</a>', 'Reservable to 10/28, FSFR After', 'Central Valley', 120, 30, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_93"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=433">Van Damme SP</a>', 'FCFS After 9/1', 'North Coast', 150, 35, 'Picnic Tables, Food Lockers, Restrooms, Showers, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_94"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/arcata/kingrange/campground.html">Wailaki</a>', 'FCFS (Year Round)', 'North Coast', 230, 8, 'Vault Toilet, Fire Ring, Picnic Table, Potable Water', 'BLM', '<div style="display:inline" id="weather_95"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=440">Westport-Union Landing SB</a>', 'FCFS (Year Round)', 'North Coast', 190, 25, 'Vault Toilets, Fire Rings, No Water.', 'CA Parks', '<div style="display:inline" id="weather_96"></div> ' ],
+[ '<a target="_blank" href="http://www.blm.gov/ca/st/en/fo/hollister/recreation/williams_hill.html">Williams Hill Recreation Area</a>', 'FCFS (Year Round)', 'Central Coast', 175, 0, 'Vault Toilet, Fire Ring, Picnic Table, No Water', 'BLM', '<div style="display:inline" id="weather_97"></div> ' ],
+[ '<a target="_blank" href="http://www.parks.ca.gov/?page_id=459">Woodson Bridge SRA</a>', 'Reservable Until 9/30 (FCFS After)', 'Shasta Cascade', 175, 25, 'Picnic Tables, Food Lockers, Showers, Restrooms, Potable Water, Fire Rings', 'CA Parks', '<div style="display:inline" id="weather_98"></div> ' ] ]*/,
+
+			"columns": [
+				{ "sTitle": "Name" },
+				{ "sTitle": "Availability" },
+				{ "sTitle": "Region" },
+				{ "sWidth": "7%", "sTitle": "Distance from SF" },
+				{ "sWidth": "7%", "sTitle": "Price Per Night" },
+				{ "sWidth": "30%", "sTitle": "Amenities" },
+				{ "sTitle": "Agency" },
+				{ "sWidth": "30%", "sTitle": "Live Weather" }
+			]
+
+		});
+
+/*	$('#max_distance').change( function() { oTable.fnDraw(); } );
+	$('#max_price').change( function() { oTable.fnDraw(); } );
+*/
+
+
+});
+
+
+
+/* Custom filtering function which will filter data in column four between two values */
+
+/*$.fn.dataTableExt.afnFiltering.push(
+	function( oSettings, aData, iDataIndex ) {
+
+		var iMaxDistance = document.getElementById('max_distance').value * 1;
+		
+		var iMaxPrice = document.getElementById('max_price').value * 1;
+
+		var iDistance = aData[3] == "-" ? 0 : aData[3]*1;
+		var iPrice = aData[4] == "-" ? 0 : aData[4]*1;
+
+		if ( iMaxDistance == "" && iMaxPrice == "")
+		{
+			return true;
+		}
+		else if ( iDistance <= iMaxDistance && iMaxPrice == "")
+		{
+			return true;
+		}
+		else if ( iMaxDistance == "" && iPrice <= iMaxPrice)
+		{
+			return true;
+		}
+		else if ( iDistance <= iMaxDistance && iPrice <= iMaxPrice)
+		{
+			return true;
+		}
+		return false;
+
+	}
+);*/
+
+/*
+$(function() {
+	var oTable = $('#campsites_table').dataTable( {
+				
+	});
+	
+	$('#max_distance').keyup( function() { oTable.fnDraw(); } );
+	$('#max_price').keyup( function() { oTable.fnDraw(); } );
+} );
+*/
+
+</script>
+
+
+<style>
+
+.finder-box {
+	
+	text-align: center;
+	border: 0px solid grey;
+	text-transform: uppercase;
+	font-size: 9pt;
+	font-weight: normal;
+	padding: 10px;
+	min-height: 60px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 8px #999;
+	
+}
+
+table thead {
+background-color: #89D692;
+text-transform: uppercase;
+}
+
+table.dataTable tr.odd {
+background-color: #E1F4E3 !important;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+background-color: #E1F4E3 !important;
+font-weight: 600;
+}
+
+table.dataTable tr.even td.sorting_1 {
+background-color: #fff !important;
+font-weight: 600;
+}
+
+</style>
+
+<h1>RentGear Campsite Finder</h1>
+
+<!--<div class="columns sixteen alpha omega page-column" style="overflow: visible; min-height: 50px; font-size: 10pt">
+<div class="columns three alpha">
+
+
+<div class="finder-box" style="background: #E1F4E3">
+Sort results by columns.</div></div>
+<div class="columns three ">
+<div class="finder-box" style="background: #C4EAC8">
+Filter by price, distance or keyword.</div></div>
+<div class="columns three">
+<div class="finder-box" style="background: #A7E0AD">
+See the real-time weather and forecast.</div></div>
+<div class="columns three">
+<div class="finder-box" style="background: #89D692">
+Follow links to reserve your site.</div></div>
+<div class="columns four omega">
+<div class="finder-box" style="background: transparent">
+<b>FCFS:</b><br>"First-Come-First-Served", also called "Walk-Up"</div></div>
+
+<p style="font-size: 10pt; padding: 5px">Find your next camping destination using our Campsite Search Tool. The table below is interactive: You can sort by columns, use the "Maximum Distance from SF" field to search for sites nearby, use the "Maximum Price" field to find sites under a certain price per night, and you can also search by keywords in the "Search" field (for example, type in "potable" to find only sites with potable water on-site). Multiple keywords can be used too (try 'potable shasta' to find campsites in the Shasta Cascade region with potable water on-site).</p>
+<p style="font-size: 10pt; padding: 5px">("Reservable" means that reservations are accepted, usually a few days ahead; "FCFS" means first-come-first-served. These are <b>great</b> for last-minute getaways)</p>
+</div>
+</div>
+
+
+<div class="columns eight omega page-column not-shown-on-mobile" style="overflow:scroll; min-height: 0px">
+<div>
+<p style="font-size: 10pt; padding: 5px">Currently we have only campsites in Northern CA that are in the CA State Park system and the Federal Bureau of Land Management system, but we are adding more sites all the time. You can find more information by clicking on the campsite name. If campsites are reservable, you can make reservations by following the link.</p>
+<p style="font-size: 10pt; padding: 5px"><a href="/last-minute-camping">Read this article</a> for more information on getting away today!</p>
+<p style="font-size: 10pt; padding: 5px">If you have any questions or suggestions, please send us a message <a href="/contact-us">here</a>. Please contact the campground or ranger station before heading out to confirm details!</p>
+</div>
+</div>
+ 
+-->
+
+<div class="columns sixteen alpha omega" style="overflow:visible">
+
+<div style="margin: 10px 0;">
+
+<p id="maxPrice"></p>
+	<p id="maxDistance"></p>
+	
+<form action="" style="font-size: 11pt; color: black">
+<span style="display: inline-block; margin-right: 25px"><label>Max. Price Per Night:</label> <select id="max_price" name="max_price">
+<option value="1">Free</option>
+<option value="10">$10</option>
+<option value="20">$20</option>
+<option value="30">$30</option>
+<option value="40">$40</option>
+<option value="50" selected>$50</option>
+</select>
+</span>
+
+<span style="display: inline-block; float: right"><label>Max. Distance from San Francisco:</label> <select id="max_distance" name="max_distance">
+<option value="50">50 Miles</option>
+<option value="75">75 Miles</option>
+<option value="100">100 Miles</option>
+<option value="150">150 Miles</option>
+<option value="250">250 Miles</option>
+<option value="10000" selected>Anywhere</option>
+</select>
+</span>
+</form>
+
+<!--<label>Max Distance from SF:</label> <input type="text" id="max_distance2" name="max_distance2">
+<label style="margin-left: 10px">Max Price Per Night:</label> <input type="text" id="max_price2" name="max_price2"> -->
+</div>
+
+<table id="campsites_table">
+
+</table>
+</div>

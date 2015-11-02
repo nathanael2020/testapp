@@ -30,3 +30,6 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
