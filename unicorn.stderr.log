@@ -1,0 +1,80 @@
+I, [2015-11-01T18:43:25.774863 #23571]  INFO -- : Refreshing Gem list
+I, [2015-11-01T18:43:29.627116 #23571]  INFO -- : listening on addr=/tmp/testapp.socket fd=11
+E, [2015-11-01T18:43:29.697986 #23571] ERROR -- : FATAL:  password authentication failed for user "nathanael"
+FATAL:  password authentication failed for user "nathanael"
+ (PG::ConnectionBad)
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+/home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+/home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_handling.rb:87:in `connection'
+config/unicorn_t.rb:39:in `block in reload'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:502:in `call'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:502:in `spawn_missing_workers'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:132:in `start'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/bin/unicorn_rails:209:in `<top (required)>'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `load'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `<main>'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `eval'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-01T18:45:13.092509 #23807]  INFO -- : Refreshing Gem list
+I, [2015-11-01T18:45:15.689958 #23807]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T18:45:15.690209 #23807]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+E, [2015-11-01T18:45:15.718660 #23807] ERROR -- : FATAL:  password authentication failed for user "nathanael"
+FATAL:  password authentication failed for user "nathanael"
+ (PG::ConnectionBad)
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+/home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+/home/nathanael/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/activerecord-4.2.4/lib/active_record/connection_handling.rb:87:in `connection'
+config/unicorn_t.rb:39:in `block in reload'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:502:in `call'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:502:in `spawn_missing_workers'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/lib/unicorn/http_server.rb:132:in `start'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/gems/unicorn-5.0.0/bin/unicorn_rails:209:in `<top (required)>'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `load'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/unicorn_rails:23:in `<main>'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `eval'
+/home/nathanael/.rvm/gems/ruby-2.2.3@testapp/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-01T18:54:48.091590 #24591]  INFO -- : Refreshing Gem list
+I, [2015-11-01T18:54:50.784254 #24591]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T18:54:50.784484 #24591]  INFO -- : listening on addr=/tmp/testapp.socket fd=10
+I, [2015-11-01T18:54:50.881877 #24591]  INFO -- : master process ready
+I, [2015-11-01T18:54:51.044200 #24596]  INFO -- : worker=0 ready
+I, [2015-11-01T18:54:51.056189 #24599]  INFO -- : worker=1 ready
+I, [2015-11-01T18:56:54.839324 #24591]  INFO -- : reaped #<Process::Status: pid 24596 exit 0> worker=0
+I, [2015-11-01T18:56:54.839671 #24591]  INFO -- : reaped #<Process::Status: pid 24599 exit 0> worker=1
+I, [2015-11-01T18:56:54.842813 #24591]  INFO -- : master complete
+I, [2015-11-01T18:56:59.796322 #24891]  INFO -- : Refreshing Gem list
+I, [2015-11-01T18:57:04.210108 #24891]  INFO -- : unlinking existing socket=/tmp/testapp.socket
+I, [2015-11-01T18:57:04.210401 #24891]  INFO -- : listening on addr=/tmp/testapp.socket fd=11
+I, [2015-11-01T18:57:04.314966 #24891]  INFO -- : master process ready
+I, [2015-11-01T18:57:04.358112 #24896]  INFO -- : worker=0 ready
+I, [2015-11-01T18:57:04.387169 #24899]  INFO -- : worker=1 ready
